@@ -1,0 +1,64 @@
+<div class="line"></div>
+<ul class="m-catalog">
+    <!-- 观看当前章节时添加 current -->
+    <li ng-class="{true: 'current'}[currentPlayInfo.chapter.id === chapter.id]"
+        ng-repeat="chapter in lesson.chapterList track by $index">
+        <div class="chapter">
+            <span class="txt">章节</span>
+            <span class="pl-ico num" ng-bind="$index + 1"></span>
+            <span class="tit" ng-bind="chapter.name" title="{{chapter.name}}"></span>
+        </div>
+        <ul class="ul-course">
+            <!-- 观看当前课件时添加 current -->
+            <li
+                    ng-init="firstMedia = courseWare.mediaList[0]"
+                    ng-class="{'current': currentPlayInfo.courseWare.id === courseWare.id,
+                    'can-not-play': ((firstMedia.allowPlayTimes && firstMedia.alreadyPlayTime >= firstMedia.time * firstMedia.allowPlayTimes) || playMode === 'listen') && playMode !=='previewLesson' ? !firstMedia.listenTime : false}"
+                    ng-click="events.playSelect(chapter, courseWare, firstMedia, $parent.$index, $index)"
+                    ng-repeat="courseWare in chapter.courseWareList track by $index">
+
+                <span ng-if="playMode==='listen'" class="listen pro-num">
+                  <span ng-if="firstMedia.mode===1">试听</span>
+                   <span ng-if="firstMedia.mode!==1" class="pl-ico lock-ico"></span>
+                </span>
+
+                <span ng-if="playMode==='previewLesson'" class="listen pro-num">
+                    预览
+                </span>
+
+
+
+                <span ng-if="playMode==='learn'" class="pro-num" ng-bind="firstMedia.schedule + '%'"></span>
+                <!-------  进度为0~24%时，用pro0  -------->
+                <!-------  进度为25~49%时，用pro25  -------->
+                <!-------  进度为50~74%时，用pro50  -------->
+                <!-------  进度为75~99%时，用pro75  -------->
+                <!-------  进度为100%时，用pro100  -------->
+                <span class="pl-ico pro" ng-class="{
+                                      pro100: firstMedia.schedule==0,
+                                      pro75: firstMedia.schedule>0 && firstMedia.schedule <=50,
+                                      pro25: firstMedia.schedule>50 && firstMedia.schedule <=75,
+                                      pro0: firstMedia.schedule>75 && firstMedia.schedule <=100}"></span>
+                <span class="tit" ng-bind="firstMedia.name"></span>
+                <span class="time" ng-bind="firstMedia.time | secondFormat"></span>
+                <span ng-class="{true: 'type-t',false: 'type-v'}[firstMedia.type === courseWareType.pdf]"
+                      class="pl-ico"></span>
+                <!--<div class="tips"-->
+                <!--ng-bind="courseWareType.pdf"></div>-->
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<ul class="m-catalog">
+    <!-- 观看当前章节时添加 current -->
+    <li ng-repeat="test in lesson.tests track by $index">
+        <div class="chapter">
+            <span class="txt">测验</span>
+            <span class="pl-ico num"></span>
+            <span class="tit" style="cursor: pointer;"
+                  ng-click="events.goTest($event, test)"
+                  ng-bind="test.name"></span>
+        </div>
+    </li>
+</ul>

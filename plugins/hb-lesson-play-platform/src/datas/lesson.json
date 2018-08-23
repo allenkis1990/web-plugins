@@ -1,0 +1,45 @@
+{
+  "guid": "9a6db5b90e9f451281aef6745b35195d",
+  "type": 2,
+  "popConfig": {
+    "mode": 0,
+    "times": 0,
+    "triggerForm": 1,
+    "triggerValue": 0.5,
+    "timeClose": "",
+    "examServiceUrl": "http://test.exam.com:8080/",
+    "questions": [
+      {
+        "id": "6c215d02-3bc8-4076-8757-3be9caca9350",
+        "time": 3275,
+        "times": 0,
+        "rule": {
+          "wrongTimes2_show_answer": ""
+        }
+      },
+      {
+        "id": "d37ed68a-da06-43c4-8f15-ee173081c78a",
+        "time": 3280,
+        "times": 5,
+        "rule": {
+          "wrongTimes2_show_answer": ""
+        }
+      }
+    ]
+  },
+  "streamPath": "/query/6qVqQcar2xJjDLd3RhTePgHQJvvPY0_YRPM3JO1g0GY=",
+  "streamHost": "http://192.168.1.227:9083",
+  "apiType": "Marker",
+  "unitId": -1,
+  "objectList": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "organizationId": -1,
+  "platformId": "402881c74e70559e014e7055ade40000",
+  "platformVersionId": "402881c74e705744014e705751b40000",
+  "projectId": "402881c74ea1976f014ea19779710000",
+  "subProjectId": "402881c74ea1976f014ea1977a4d0002"
+}

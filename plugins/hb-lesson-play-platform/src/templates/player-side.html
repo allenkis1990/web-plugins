@@ -1,0 +1,26 @@
+<div class="m-player-side">
+    <div class="side-cont">
+        <div class="info">
+            <div class="info-tit" ng-bind="lesson.name"></div>
+            <p ng-bind="lesson.teacher.join(',')"></p>
+            <p>共<span ng-bind="lesson.numbers"></span>讲</p>
+            <div class="process" ng-if="playMode === 'learn'">
+                <span class="current" ng-style="{width: lesson.schedule + '%'}"></span>
+                <div class="tips">
+                    已学 <span ng-bind="lesson.schedule"></span>%
+                </div>
+            </div>
+        </div>
+
+        <div components class="side-bd"></div>
+    </div>
+    <div class="tab-tit">
+        <a href="javascript:void(0)"
+           ng-click="events.toggleDirectory($event, component)"
+           ng-class="{current: currentActiveDirectory.name === component.name}"
+           ng-repeat="component in components track by $index">
+            <span ng-if="component.className" class="pl-ico" ng-class="component.className"></span>
+            {{component.title}}
+        </a>
+    </div>
+</div>

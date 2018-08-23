@@ -1,0 +1,14 @@
+<div class="player-box {{rootClass}}">
+  <div class="m-player" ng-style="style.content" style="right: 0">
+    <a ng-if="backTargetUrl"
+       ng-click="events.backToTarget()" href="javascript:void(0)" class="pl-ico return"><span
+            class="pl-ico"></span>返回课程页面</a>
+    <div class="line"></div>
+    <div class="title">
+      <span class="pl-ico chapter">预览</span>
+      <span class="pl-ico num">o</span>
+      <span class="tit-txt">{{currentPlayInfo.courseWare.name}}</span>
+    </div>
+    <div ui-view></div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="pf-dialog-container animated" ng-repeat="dialog in $$_$$_$$_hbNotification.contentDialogs track by $index"
+     ng-style="{zIndex: dialog.zIndex}"
+     ng-init="dialog.dialogIndex=$index">
+    <div class="mask" ng-if="dialog.showModal"></div>
+    <div class="dialog dw-1" ng-style="dialog.style" ng-show="dialog.dialogLoaded">
+        <div class="dialog-body">
+            <div class="dialog-tit dt-1">
+                <span hb-bind="dialog.title" ng-if="dialog.showTitle"></span>
+                <a href="javascript:void(0)" class="ico ico-close"
+                   ng-click="dialog.close($index)"></a>
+            </div>
+            <div class="dialog-cont" ng-include="dialog.templateUrl"
+                 data-onload="dialog.loaded($index)"></div>
+
+            <div class="btn-bar tc">
+                <button href="javascript:void(0);" class="btn-sr" ng-click="dialog.click($index)"
+                        ng-if="dialog.showCertain">
+                    <div class="la-ball-fall" style="display: inline-block;" ng-if="dialog.requestIng">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <span ng-if="!dialog.requestIng" ng-bind="dialog.confirmText">确定</span>
+                </button>
+
+                <button href="javascript:void(0);" class="btn-sg" ng-click="dialog.cancel($index)"
+                        ng-if="dialog.showCancel" ng-bind="dialog.cancelText">
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

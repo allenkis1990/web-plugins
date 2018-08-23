@@ -1,0 +1,25 @@
+<div class="player-bd " toggle-player>
+  <div ng-show="listenEnd" class="class-over">
+    <div class="message">
+      您的试听时间已结束!
+    </div>
+  </div>
+  <div ng-show="allowTimesOut" cannot-remove class="class-over">
+    <div class="message">
+      您的学习上限时长用光!
+    </div>
+  </div>
+  <div id="particles" particles-bg></div>
+
+  <div style="width: 100%" id="lesson_player_box_container"></div>
+
+</div>
+
+<div class="btn-box animated" ng-if="hasMultiResource">
+  <div ng-show="listenEnd" class="class-over"></div>
+  <span class="click-btn ml-1">
+    <i class="exclamatory-ico">!</i>播放不够流畅吗？
+      <a href="javascript:void(0)" class="ml-1 btn"
+         ng-click="events.toggleSourcePlayer()">点我试试<i
+              class="pl-ico hand-ico"></i></a></span>
+</div>

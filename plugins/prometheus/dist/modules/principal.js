@@ -1,0 +1,8 @@
+/**
+ * prometheus - 普罗米修斯
+ * @author 
+ * @version v1.0.91
+ * @link 
+ * @license MIT
+ */
+define(["angular"],function(t){"use strict";var e=t.module("AuthorizationSystem",[]);e.provider("authorize",function(){this.DEV_MODE_FOR_PERMIT=!1;var e=this;this.$get=["$window","$http","$rootScope",function(i,n,s){var r=t.isDefined;return{DEV_MODE_FOR_PERMIT:e.DEV_MODE_FOR_PERMIT,setLogin:function(t){this.getSessionStorage().setItem("isLogged",t)},existPermission:function(t,e){return!("undefined"==typeof t[e])},setPermissions:function(e){var i=e||"datas/authorities.json",r=n.get(i),o=this;return r.success(function(e){o.getSessionStorage().setItem("authorizeList",t.toJson(e)),s.$broadcast("permissionsChanged")}),r},getPermissions:function(){var e,i=this.getAuthorizeListStr();return i&&(e=t.fromJson(i)),e},getAuthorizeListStr:function(){var t=this.getSessionStorage(),e=t.getItem("authorizeList");return e},initOrNot:function(){var t=this.getAuthorizeListStr();return r(t)},getSessionStorage:function(){return i.sessionStorage},isLogon:function(){var e=this.getSessionStorage().getItem("isLogged");return t.isDefined(e)&&""!==e&&"false"!==e},hasPermissionDo:function(t){return this.existPermission(this.getPermissions(),t)},needCheckState:function(t){return!!r(t.access)&&t.access.requireLogin}}}]}),e.directive("hasPermission",["authorize","$log","$animate","$timeout","$parse",function(t,e,i,n,s){return{restrict:"A",transclude:"element",priority:2e3,terminal:!1,link:function(e,n,r,o,u){function a(e){return t.hasPermissionDo(e)}function c(s){s&&u(e,function(e){t.DEV_MODE_FOR_PERMIT?i.enter(e,n.parent(),n):a(s)&&i.enter(e,n.parent(),n)})}c(r.exp?s(r.hasPermission)(e):r.hasPermission)}}}])});

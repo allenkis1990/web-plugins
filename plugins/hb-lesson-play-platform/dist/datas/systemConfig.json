@@ -1,0 +1,25 @@
+{
+  "playParamsUrl": "/web/portal/play/getPlayParams",
+  "lessonUrl": "/web/portal/play/getCourseInfo",
+  "askLessonScheduleUrl": "/web/portal/play/getLessonSchedule",
+  "loginInfoUrl": "/web/login/login/loginInfo.action",
+  "timeToSaveMediaLearnTime": 5000,
+  "defaultResourceType": "player_800li",
+  "single": {
+    "width": "100%",
+    "height": "100%"
+  },
+  "backTargetUrl": "",
+  "studyServer": {
+    "init": "http://studyv2.testab.59iedu.com:1457/api/LearningMarker/Initing",
+    "threeTiming": "http://studyv2.testab.59iedu.com:1457/api/LearningMarker/Timing",
+    "documentTiming": "http://studyv2.testab.59iedu.com:1457/api/LearningMarker/DocumentTiming",
+    "timing": "http://studyv2.testab.59iedu.com:1457/api/LearningMarker/Timing"
+  },
+  "toggleSourcePolicy": {
+    "type": "always",
+    "policyUrl": null
+  },
+  "showVideoFirst": true,
+  "showDirectoryFirst": false
+}

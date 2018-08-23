@@ -1,0 +1,48 @@
+{
+  "name": "hb-player",
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
+    "babel-plugin-transform-es3-property-literals": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "bluebird": "^3.5.1",
+    "cssnano": "^4.0.3",
+    "ejs": "^2.5.7",
+    "es5-shim": "^4.5.10",
+    "express": "^4.16.2",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-nested": "^3.0.0",
+    "postcss-simple-vars": "^4.1.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.56.5",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "uglify-js": "^3.3.23"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./build/index.js",
+    "dev:web-polyv.umd": "rollup -w -c build/config.js --environment TARGET:web-polyv.umd",
+    "dev:web-800li.umd": "rollup -w -c build/config.js --environment TARGET:web-800li.umd",
+    "dev:web-doc.umd": "rollup -w -c build/config.js --environment TARGET:web-doc.umd"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "flow-bin": "^0.69.0",
+    "rollup-plugin-postcss": "^1.6.2"
+  }
+}

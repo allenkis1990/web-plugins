@@ -1,0 +1,32 @@
+{
+  "name": "hb-plugin-pop-question",
+  "version": "0.0.1",
+  "description": "",
+  "authors": [
+    "wengpengfei <466077335@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "^2.3.5",
+    "requirejs-plugins": "^1.0.3",
+    "jquery": "1.11.1"
+  },
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "1148"
+  },
+  "_source": "http://192.168.1.81/svn/prometheus/开发库/04集成与测试/代码与实现/hb-plugin-pop-question",
+  "_target": "0.0.1",
+  "_originalSource": "hb-plugin-pop-question",
+  "_direct": true
+}

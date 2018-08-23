@@ -1,0 +1,22 @@
+{
+  "name": "hb-player",
+  "version": "0.0.1",
+  "description": "",
+  "authors": [
+    "wengpengfei <466077335@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "^2.3.5",
+    "requirejs-plugins": "^1.0.3",
+    "jquery": "1.11.1"
+  }
+}

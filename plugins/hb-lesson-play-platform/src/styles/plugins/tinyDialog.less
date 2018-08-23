@@ -1,0 +1,85 @@
+.tiny-dialog {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  .tiny-dialog-mask {
+    position: absolute;
+    width: 100%;
+    opacity: 0.6;
+    height: 100%;
+    background: black;
+  }
+  .tiny-dialog-content-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: white;
+    border-radius: 4px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    .tiny-dialog-body {
+      padding: 10px;
+      position: absolute;
+      top: 45px;
+      bottom: 50px;
+      overflow: auto;
+    }
+    .tiny-dialog-title {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .tiny-dialog-close {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background-position: -16px -177px;
+      background-image: url("../images/player-icon.png");
+      float: right;
+      cursor: pointer;
+      -webkit-transition: none;
+      -moz-transition: none;
+      -ms-transition: none;
+      -o-transition: none;
+      transition: none;
+      &:hover {
+        background-position: -0px -177px;
+      }
+    }
+    .tiny-dialog-foot {
+      position: absolute;
+      background: white;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      left: 0;
+      padding: 10px;
+      border-radius: 4px;
+
+      button {
+        &:active {
+          outline: none;
+          box-shadow: inset 0px 6px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+      .tiny-dialog-certain, .tiny-dialog-cancel {
+        color: white;
+        border-radius: 4px;
+        padding: 7px 9px;
+        margin-left: 10px;
+      }
+      .tiny-dialog-certain {
+        background: #08af9c;
+      }
+      .tiny-dialog-cancel {
+        background: #cecece;
+      }
+    }
+  }
+}

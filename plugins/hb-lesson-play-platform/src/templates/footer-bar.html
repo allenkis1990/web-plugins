@@ -1,0 +1,23 @@
+<div class="name-box">
+  <div ng-show="listenEnd" class="class-over"></div>
+  <a href="javascript:void(0);"
+     ng-click="events.goLeft()"
+     class="btn-left"><span class="pl-ico"></span></a>
+  <a href="javascript:void(0);"
+     ng-click="events.goRight()"
+     class="btn-right"><span class="pl-ico"></span></a>
+  <div class="name-bd" id="name_bd">
+    <ul class="ul-name" ng-style="threeBarStyle">
+      <li ng-repeat="catalog in playParams.catalogList track by $index"
+          ng-click="events.dumpPlay(catalog)" ng-class="{true: 'current'}[catalog.actived]">
+        <div class="txt">
+          <p>第<span ng-bind="$index + 1"></span>节</p>
+          <p class="mt-5" ng-bind="catalog.name"></p>
+        </div>
+        <div class="process">
+          <span class="pro-current" ng-style="{width: catalog.schedule + '%'}"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

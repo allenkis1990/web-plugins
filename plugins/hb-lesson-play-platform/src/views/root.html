@@ -1,0 +1,34 @@
+<div class="player-box {{rootClass}}">
+  <div class="m-player" ng-style="style.content" style="right: 0">
+    <div class="prev" ng-if="currentPlayInfo.hasPrev">
+      <a href="javascript:void(0)"
+         ng-click="events.playPrev()"
+         class="pl-ico"></a><span>上一个</span>
+    </div>
+    <div class="next" ng-if="currentPlayInfo.hasNext">
+      <a href="javascript:void(0)" ng-click="events.playNext()" class="pl-ico"></a><span>下一个</span>
+    </div>
+    <a ng-if="backTargetUrl"
+       ng-click="events.backToTarget()" href="javascript:void(0)" class="pl-ico return"><span
+            class="pl-ico"></span>返回课程页面</a>
+    <div class="line"></div>
+    <div class="title">
+      <span class="pl-ico chapter">章节{{currentPlayInfo.chapter.index + 1}}</span>
+      <span class="pl-ico num" ng-bind="currentPlayInfo.courseWare.index + 1"></span>
+      <span class="tit-txt" ng-bind="currentPlayInfo.courseWare.name"></span>
+      <div class="tips available left animated fadeInRight"
+           ng-if="availableTime"
+           rest-tip
+           style="display: inline-block;opacity: 1">
+        有效学习时长：<span class="time" style="margin-top: -3px;" ng-bind="availableTime"></span>
+      </div>
+    </div>
+    <div ui-view="playerBox"></div>
+  </div>
+  <div player-side
+       ctrl-style="style"
+       ng-style="style.side"
+       lesson="lesson"
+       current-play-info="currentPlayInfo"
+  ></div>
+</div>

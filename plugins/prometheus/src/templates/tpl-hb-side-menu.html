@@ -1,0 +1,47 @@
+<div class="side fl" ng-style="model.sideStyle">
+    <div class="menu-loading-mark" ng-if="menuList.length <= 0">
+        <div class="menu-loading-mark-bg"></div>
+        <div class="menu-loading-mark-img">
+            <img src="images/loading.gif" width="40" height="40" alt=""/>
+        </div>
+    </div>
+
+    <ul class="ul-side">
+        <li ng-repeat="menu in menuList"
+            ng-class="{'current': menu.name === model.currentMenuState}">
+            <span class="ink"></span>
+            <a href="javascript:void(0);" class="menu-name" hb-ink-animate
+               ng-click="events.toggleSub($event, menu, menu.state, menu.name)">
+                <span ng-class="menu.menuIcon" class="ico"></span>
+                {{menu.name}}
+                <i ng-if="menu.subs && menu.subs.length>0"
+                   ng-class="{'i-animate': menu.showSub && !isIe8, 'open': menu.showSub && isIe8}"></i>
+            </a>
+
+            <ul class="ul-sub-menu" ng-if="menu.subs && menu.subs.length > 0" style="display: none;">
+                <li ng-repeat="subMenu in menu.subs">
+                    <a href="javascript:void(0);"
+                       ng-click="events.toggleSub($event, subMenu, subMenu.state, menu.name)"
+                       ng-class="{'current': model.currentMenu === subMenu.state && menu.name === model.currentMenuName}"
+                       class="sub-menu-name">
+                        <span class="ico"></span>{{subMenu.name}}
+                        <i ng-if="subMenu.subs && subMenu.subs.length > 0"
+                           ng-class="{'i-animate': menu.showSub && !isIe8, 'open': menu.showSub && isIe8}"></i>
+                    </a>
+
+                    <div class="sub-menu" ng-if="subMenu.subs && subMenu.subs.length > 0" ng-show="subMenu.showSub">
+                        <ul class="ul-sub-menu-1 sm-1">
+                            <li ng-repeat="grandSubMenu in subMenu.subs">
+                                <a href="javascript:void(0);"
+                                   ng-click="events.toggleSub($event, grandSubMenu, grandSubMenu.state,menu.name)"
+                                   class="sub-menu-name smn-1"><span class="ico-s"></span>{{grandSubMenu.name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <a href="javascript:void(0);" class="ico side-label" ng-click="events.toggleSideNav()"></a>
+</div>
